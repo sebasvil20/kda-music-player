@@ -8,6 +8,14 @@ h2,
 h3 {
   color: rgb(56, 56, 56);
 }
-
+body {
+  font-family: "Poppins", sans-serif;
+}
+h3,
+h4 {
+  font-weight: 400;
+  color: rgb(100, 100, 100);
+}
 @import "./song";
 @import "./player";
+@import "./library";
