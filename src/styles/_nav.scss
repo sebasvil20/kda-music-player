@@ -7,16 +7,28 @@ nav {
     background: transparent;
     border: none;
     cursor: pointer;
-    border: 2px solid rgb(82, 82, 82);
+    border: 2px solid #66accf;
     padding: 0.5rem;
     font-size: 1rem;
+    font-family: "Noto Sans KR", sans-serif;
     transition: all 0.3s ease;
     &:hover {
-      background: rgb(82, 82, 82);
+      background: #66accf;
       color: white;
     }
   }
   .logo {
+    font-family: "KDA";
     color: #7ad2f3;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    margin-right: 1rem;
+    button {
+      z-index: 10;
+      min-width: 90px;
+    }
   }
 }

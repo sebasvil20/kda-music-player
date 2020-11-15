@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "KDA";
+  src: url("./fonts/KDA.ttf") format("opentype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +14,30 @@ h3 {
   color: rgb(56, 56, 56);
 }
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 h3,
 h4 {
   font-weight: 400;
   color: rgb(82, 82, 82);
 }
+
+.App {
+  transition: all 0.5s ease;
+}
+
+.library-active {
+  margin-left: 20rem;
+}
+
+@media screen and (min-width: 1280px) {
+  .library-active {
+    margin-left: 10rem;
+  }
+}
+
 @import "./song";
 @import "./player";
 @import "./library";
 @import "./nav";
+@import "./background";

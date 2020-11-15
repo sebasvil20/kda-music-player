@@ -5,7 +5,7 @@ const Nav = ({ libraryStatus, setLibraryStatus }) => {
   return (
     <nav>
       <h1>
-        <span class="logo">KDA </span>
+        <span className="logo">KDA </span>
         Music player
       </h1>
       <button

@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { playAudio } from "../util";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -36,6 +35,7 @@ const Player = ({
       }
     });
     setSongs(newSongs);
+    //eslint-disable-next-line
   }, [currentSong]);
 
   //Event handlers
@@ -60,29 +60,41 @@ const Player = ({
     setSongInfo({ ...songInfo, currentTime: e.target.value });
   };
 
-  const skipTrackHandler = (direction) => {
+  const skipTrackHandler = async (direction) => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
     let newIndex = currentIndex + direction;
 
     if (newIndex < 0) newIndex = songs.length - 1;
     if (newIndex >= songs.length) newIndex = 0;
 
-    setCurrentSong(songs[newIndex]);
-    //Check is the song is playing
-    playAudio(isPlaying, audioRef);
+    await setCurrentSong(songs[newIndex]);
+    if (isPlaying) audioRef.current.play();
+  };
+
+  //Add the styles
+  const trackAnim = {
+    transform: `translateX(${songInfo.animationPercentage}%)`,
   };
 
   return (
     <div className="player">
       <div className="time-control">
         <p>{getTime(songInfo.currentTime)}</p>
-        <input
-          min={0}
-          max={songInfo.duration || 0}
-          value={songInfo.currentTime}
-          onChange={dragHandler}
-          type="range"
-        />
+        <div
+          style={{
+            background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+          }}
+          className="track"
+        >
+          <input
+            min={0}
+            max={songInfo.duration || 0}
+            value={songInfo.currentTime}
+            onChange={dragHandler}
+            type="range"
+          />
+          <div style={trackAnim} className="animate-track"></div>
+        </div>
         <p>{songInfo.duration ? getTime(songInfo.duration) : "0:00"}</p>
       </div>
       <div className="play-control">
