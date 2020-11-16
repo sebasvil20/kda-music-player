@@ -12,10 +12,21 @@
   -webkit-text-stroke: 2px #97c6dd;
 }
 
+.uniqueTime {
+  transition: all 0.2s ease;
+  -webkit-animation: flicker-in-1 2s linear both;
+  animation: flicker-in-1 2s linear both;
+}
 .flicker-in-1 {
   transition: all 0.2s ease;
   -webkit-animation: flicker-in-1 5s infinite linear both;
   animation: flicker-in-1 5s infinite linear both;
+}
+
+@media screen and (max-width: 1670px) {
+  .bigB {
+    font-size: 5rem;
+  }
 }
 
 @-webkit-keyframes flicker-in-1 {

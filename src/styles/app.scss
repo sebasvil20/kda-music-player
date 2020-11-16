@@ -22,17 +22,60 @@ h4 {
   color: rgb(82, 82, 82);
 }
 
+.made-with {
+  font-size: 16px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  min-width: 240px;
+  transition: all 0.5s ease;
+  a {
+    color: #7ad2f3;
+    text-decoration: none;
+  }
+}
+
+.copyright {
+  font-size: 10px;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  min-width: 450px;
+  transition: all 0.5s ease;
+}
+
 .App {
   transition: all 0.5s ease;
+  height: 100vh !important;
+  overflow: hidden !important;
 }
 
 .library-active {
   margin-left: 20rem;
+  left: 42%;
 }
 
-@media screen and (min-width: 1280px) {
+.z {
+  z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
   .library-active {
-    margin-left: 10rem;
+    margin-left: 0rem !important;
+  }
+}
+
+@media screen and (max-width: 472px) {
+  .made-with {
+    bottom: 35px;
+  }
+  .copyright {
+    max-width: 350px;
+    min-width: 350px;
   }
 }
 

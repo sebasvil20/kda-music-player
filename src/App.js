@@ -82,7 +82,17 @@ function App() {
         src={currentSong.audio}
         onEnded={songEndHandler}
       ></audio>
-      <WordBackground />
+      <WordBackground isPlaying={isPlaying} />
+      <h1 className={`made-with ${libraryStatus ? "library-active z" : ""}`}>
+        Made with &#x2764;&#xFE0F; by{" "}
+        <a href="https://github.com/sebasvil20" rel="noopener noreferrer">
+          @Sebasvil20
+        </a>
+      </h1>
+      <h4 className={`copyright ${libraryStatus ? "library-active z" : ""}`}>
+        NO COPYRIGHT INFRINGEMENT INTENDED. ALL K/DA COPYRIGHT BELONG TO RIOT
+        GAMES, INC.
+      </h4>
     </div>
   );
 }
