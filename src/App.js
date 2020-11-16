@@ -85,7 +85,11 @@ function App() {
       <WordBackground isPlaying={isPlaying} />
       <h1 className={`made-with ${libraryStatus ? "library-active z" : ""}`}>
         Made with &#x2764;&#xFE0F; by{" "}
-        <a href="https://github.com/sebasvil20" rel="noopener noreferrer">
+        <a
+          href="https://github.com/sebasvil20"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           @Sebasvil20
         </a>
       </h1>
