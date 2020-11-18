@@ -74,11 +74,19 @@ const Player = ({
 
   const skipTrackHandler = async (direction) => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    let newIndex = currentIndex + direction;
 
-    if (newIndex < 0) newIndex = songs.length - 1;
-    if (newIndex >= songs.length) newIndex = 0;
+    let newIndex = null;
+    if (isRandom) {
+      newIndex = Math.floor(Math.random() * 11);
+      if (currentIndex === newIndex) {
+        newIndex = Math.floor(Math.random() * 11);
+      }
+    } else {
+      newIndex = currentIndex + direction;
 
+      if (newIndex < 0) newIndex = songs.length - 1;
+      if (newIndex >= songs.length) newIndex = 0;
+    }
     await setCurrentSong(songs[newIndex]);
     if (isPlaying) audioRef.current.play();
   };

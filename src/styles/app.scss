@@ -67,15 +67,16 @@ h4 {
   .library-active {
     margin-left: 0rem !important;
   }
+  .made-with,
+  .copyright {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 472px) {
-  .made-with {
-    bottom: 35px;
-  }
+  .made-with,
   .copyright {
-    max-width: 350px;
-    min-width: 350px;
+    display: none;
   }
 }
 
