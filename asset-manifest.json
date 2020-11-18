@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/kda-music-player/static/css/main.1517a8c1.chunk.css",
-    "main.js": "/kda-music-player/static/js/main.726aa583.chunk.js",
-    "main.js.map": "/kda-music-player/static/js/main.726aa583.chunk.js.map",
+    "main.css": "/kda-music-player/static/css/main.9e47db43.chunk.css",
+    "main.js": "/kda-music-player/static/js/main.796668d6.chunk.js",
+    "main.js.map": "/kda-music-player/static/js/main.796668d6.chunk.js.map",
     "runtime-main.js": "/kda-music-player/static/js/runtime-main.2bdb52fe.js",
     "runtime-main.js.map": "/kda-music-player/static/js/runtime-main.2bdb52fe.js.map",
-    "static/js/2.6e5afb13.chunk.js": "/kda-music-player/static/js/2.6e5afb13.chunk.js",
-    "static/js/2.6e5afb13.chunk.js.map": "/kda-music-player/static/js/2.6e5afb13.chunk.js.map",
+    "static/js/2.fbea3cc1.chunk.js": "/kda-music-player/static/js/2.fbea3cc1.chunk.js",
+    "static/js/2.fbea3cc1.chunk.js.map": "/kda-music-player/static/js/2.fbea3cc1.chunk.js.map",
     "static/js/3.66d3ae42.chunk.js": "/kda-music-player/static/js/3.66d3ae42.chunk.js",
     "static/js/3.66d3ae42.chunk.js.map": "/kda-music-player/static/js/3.66d3ae42.chunk.js.map",
     "index.html": "/kda-music-player/index.html",
-    "static/css/main.1517a8c1.chunk.css.map": "/kda-music-player/static/css/main.1517a8c1.chunk.css.map",
-    "static/js/2.6e5afb13.chunk.js.LICENSE.txt": "/kda-music-player/static/js/2.6e5afb13.chunk.js.LICENSE.txt",
+    "static/css/main.9e47db43.chunk.css.map": "/kda-music-player/static/css/main.9e47db43.chunk.css.map",
+    "static/js/2.fbea3cc1.chunk.js.LICENSE.txt": "/kda-music-player/static/js/2.fbea3cc1.chunk.js.LICENSE.txt",
     "static/media/app.scss": "/kda-music-player/static/media/KDA.08273d79.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.2bdb52fe.js",
-    "static/js/2.6e5afb13.chunk.js",
-    "static/css/main.1517a8c1.chunk.css",
-    "static/js/main.726aa583.chunk.js"
+    "static/js/2.fbea3cc1.chunk.js",
+    "static/css/main.9e47db43.chunk.css",
+    "static/js/main.796668d6.chunk.js"
   ]
 }
