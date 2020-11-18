@@ -21,6 +21,8 @@ function App() {
   const [songs, setSongs] = useState(data());
   const [currentSong, setCurrentSong] = useState(songs[0]);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isRandom, setIsRandom] = useState(false);
+  const [volume, setVolume] = useState(1);
   const [songInfo, setSongInfo] = useState({
     currentTime: 0,
     duration: 0,
@@ -45,11 +47,23 @@ function App() {
 
   const songEndHandler = async () => {
     let currentIndex = songs.findIndex((song) => song.id === currentSong.id);
-    let newIndex = currentIndex + 1;
-    if (newIndex >= songs.length) newIndex = 0;
+    let newIndex = null;
+    if (isRandom) {
+      newIndex = Math.floor(Math.random() * 11);
+      if (currentIndex === newIndex) {
+        newIndex = Math.floor(Math.random() * 11);
+      }
+    } else {
+      newIndex = currentIndex + 1;
+      if (newIndex >= songs.length) newIndex = 0;
+    }
 
     await setCurrentSong(songs[newIndex]);
     if (isPlaying) audioRef.current.play();
+  };
+
+  const handleVolume = (value) => {
+    document.getElementById("audio-source").volume = value;
   };
 
   return (
@@ -62,10 +76,15 @@ function App() {
         songInfo={songInfo}
         songs={songs}
         audioRef={audioRef}
+        isRandom={isRandom}
+        volume={volume}
+        setVolume={setVolume}
         setSongInfo={setSongInfo}
         setIsPlaying={setIsPlaying}
         setCurrentSong={setCurrentSong}
         setSongs={setSongs}
+        setIsRandom={setIsRandom}
+        handleVolume={handleVolume}
       />
       <Library
         audioRef={audioRef}
@@ -81,6 +100,7 @@ function App() {
         ref={audioRef}
         src={currentSong.audio}
         onEnded={songEndHandler}
+        id="audio-source"
       ></audio>
       <WordBackground isPlaying={isPlaying} />
       <h1 className={`made-with ${libraryStatus ? "library-active z" : ""}`}>

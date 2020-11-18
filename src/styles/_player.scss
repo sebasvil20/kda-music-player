@@ -34,6 +34,51 @@
   }
 }
 
+.randomButton {
+  cursor: pointer;
+  color: #7fa8d1;
+  transition: all 0.2s ease;
+}
+
+.randomButton-Active {
+  color: #105fad !important;
+}
+
+// Estilos del slider del volumen
+input[type="range"].slider2 {
+  padding: 3px 0px;
+}
+input[type="range"].slider2:focus {
+  outline: none;
+}
+input[type="range"].slider2::-webkit-slider-thumb {
+  height: 16px;
+  width: 16px;
+}
+input[type="range"].slider2::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: #7fa8d1;
+}
+input[type="range"].slider2::-ms-thumb {
+  height: 16px;
+  width: 16px;
+  background-color: #7fa8d1;
+}
+
+input[type="range"].slider2::-webkit-slider-runnable-track {
+}
+input[type="range"].slider2::-moz-range-track {
+  border: 1px solid #105fad;
+  background-color: #105fad;
+  border-radius: 5px;
+}
+input[type="range"].slider2::-ms-track {
+  border: 1px solid #105fad;
+  background-color: #105fad;
+}
+
+// Estilos del slider de la cancion
 input[type="range"]:focus {
   outline: none;
 }
@@ -82,6 +127,9 @@ input[type="range"]::-ms-thumb {
   }
   .play-control {
     width: 50% !important;
+  }
+  input[type="range"].slider2 {
+    display: none;
   }
 }
 @media screen and (max-width: 1280px) {

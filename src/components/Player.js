@@ -5,6 +5,7 @@ import {
   faPause,
   faAngleLeft,
   faAngleRight,
+  faRandom,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Player = ({
@@ -13,10 +14,15 @@ const Player = ({
   audioRef,
   currentSong,
   songs,
+  isRandom,
+  volume,
+  setIsRandom,
   setSongInfo,
   setIsPlaying,
   setCurrentSong,
   setSongs,
+  handleVolume,
+  setVolume,
 }) => {
   //useEffect
   useEffect(() => {
@@ -58,6 +64,12 @@ const Player = ({
   const dragHandler = (e) => {
     audioRef.current.currentTime = e.target.value;
     setSongInfo({ ...songInfo, currentTime: e.target.value });
+  };
+
+  const dragHandlerVolume = (e) => {
+    document.getElementById("myRange").value = e.target.value;
+    setVolume(e.target.value);
+    handleVolume(e.target.value);
   };
 
   const skipTrackHandler = async (direction) => {
@@ -115,6 +127,28 @@ const Player = ({
           className="skip-forward icon"
           size="2x"
           icon={faAngleRight}
+        />
+      </div>
+      <div class="randomPlayButton">
+        <FontAwesomeIcon
+          onClick={() => setIsRandom(!isRandom)}
+          className={`randomButton icon ${
+            isRandom ? "randomButton-Active" : null
+          }`}
+          size="2x"
+          icon={faRandom}
+        />
+      </div>
+      <div className="slidecontainer">
+        <input
+          type="range"
+          min={0}
+          max={1}
+          step={0.1}
+          value={volume}
+          className="slider2"
+          onChange={dragHandlerVolume}
+          id="myRange"
         />
       </div>
     </div>
